@@ -1,6 +1,7 @@
 package dao;
 
 import entity.User;
+import util.DBConnectionUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,7 +17,7 @@ public class UserDao {
      */
     public List<User> selectAll(){
         List<User> list = new ArrayList<>();
-        Connection conn = BaseDao.getConnection();
+        Connection conn = DBConnectionUtil.getConnection();
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         try{
@@ -43,7 +44,7 @@ public class UserDao {
      */
     public int insert(User u){
         int count = 0;
-        Connection conn = BaseDao.getConnection();
+        Connection conn = DBConnectionUtil.getConnection();
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         try{
@@ -58,7 +59,7 @@ public class UserDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            BaseDao.closeConnection(conn, pstmt, rs);
+            DBConnectionUtil.closeConnection(conn, pstmt, rs);
         }
         return count;
     }
@@ -70,7 +71,7 @@ public class UserDao {
      */
     public  User selectById(int id){
         User u = new User();
-        Connection conn = BaseDao.getConnection();
+        Connection conn = DBConnectionUtil.getConnection();
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         try{
@@ -86,7 +87,7 @@ public class UserDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            BaseDao.closeConnection(conn, pstmt, rs);
+            DBConnectionUtil.closeConnection(conn, pstmt, rs);
         }
         return u;
     }
@@ -98,7 +99,7 @@ public class UserDao {
      */
     public int update(User u){
         int count = 0;
-        Connection conn = BaseDao.getConnection();
+        Connection conn = DBConnectionUtil.getConnection();
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         try{
@@ -111,7 +112,7 @@ public class UserDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            BaseDao.closeConnection(conn, pstmt, rs);
+            DBConnectionUtil.closeConnection(conn, pstmt, rs);
         }
         return count;
     }
@@ -123,7 +124,7 @@ public class UserDao {
      */
     public int delete(int id){
         int count = 0;
-        Connection conn = BaseDao.getConnection();
+        Connection conn = DBConnectionUtil.getConnection();
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         try{
@@ -133,7 +134,7 @@ public class UserDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            BaseDao.closeConnection(conn, pstmt, rs);
+            DBConnectionUtil.closeConnection(conn, pstmt, rs);
         }
         return count;
     }

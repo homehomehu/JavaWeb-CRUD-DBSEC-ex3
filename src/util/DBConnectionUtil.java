@@ -1,8 +1,8 @@
-package dao;
+package util;
 
 import java.sql.*;
 
-public class BaseDao {
+public class DBConnectionUtil {
     // 在类进行实例加载时执行的一次性初始化操作，
     // 简单来说就是被 **static修饰的代码块** 会在该类首次被加载的时候执行，
     // 并且只执行一次
