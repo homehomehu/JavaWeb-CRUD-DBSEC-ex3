@@ -18,7 +18,7 @@ public class DBConnectionUtil {
     /**
      *
      * @return
-     * 定义BaseDao里的一个建立数据库连接的方法
+     * 一个建立数据库连接的方法
      * 该方法的返回类型就是一个 Connection 对象
      */
     //

@@ -10,7 +10,7 @@ public class User {
     public User() {
     }
 
-    // 无id的构造函数
+    // 无参数id的构造函数
     public User(String username, String password, String email) {
         this.username = username;
         this.password = password;
@@ -25,10 +25,12 @@ public class User {
         this.email = email;
     }
 
+    // 属性获取方法
     public Integer getId() {
         return id;
     }
 
+    // 属性赋值方法
     public void setId(Integer id) {
         this.id = id;
     }

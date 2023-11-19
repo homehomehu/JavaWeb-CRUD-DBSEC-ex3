@@ -76,11 +76,11 @@ public class UserDao {
         ResultSet rs = null;
         try{
             pstmt = conn.prepareStatement("select * from t_user where id = ?");
-            pstmt.setInt(1, id);
+            pstmt.setInt(1, id); // 将占位符 ？的值设置为 id
             rs = pstmt.executeQuery();
             while (rs.next()){
-                u = new User(rs.getInt(1),
-                        rs.getString(2),
+                u = new User(rs.getInt(1), // 从结果集获取第一列的整数值
+                        rs.getString(2), // 从结果集获取第二列的字符串值，后面以此类推
                         rs.getString(3),
                         rs.getString(4));
             }
